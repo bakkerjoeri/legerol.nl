@@ -80,23 +80,18 @@
 			{% for rol in collections.rollen %}
 				<li>
 					<figure>
-						{% if forloop.index <= 3 %}
 							<img
 								src="{{ rol.path }}"
 								alt=""
-								sizes="(max-width: 600px) 100vw, 600px"
-								fetchpriority="high"
 								eleventy:widths="300,600"
+								{% if forloop.index <= 3 %}
+									fetchpriority="high"
+									sizes="(max-width: 600px) 100vw, 600px"
+								{% else %}
+									loading="lazy"
+									sizes="auto"
+								{% endif %}
 							/>
-						{% else %}
-							<img
-								src="{{ rol.path }}"
-								alt=""
-								loading="lazy"
-								sizes="auto"
-								eleventy:widths="300,600"
-							/>
-						{% endif %}
 						<figcaption>{{ rol.takenAt | date: '%Y-%m-%d' }}</figcaption>
 					</figure>
 				</li>
