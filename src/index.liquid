@@ -21,21 +21,32 @@
 				padding-right: 20px;
 			}
 
-			figure {
-				aspect-ratio: 1;
-			}
-
-			img {
-				display: block;
-				max-width: 100%;
-			}
-
 			.photogrid {
 				margin: 0;
 				padding: 0;
 				list-style: none;
 				display: grid;
 				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			}
+
+			figure {
+				position: relative;
+				aspect-ratio: 1;
+			}
+
+			figcaption {
+				position: absolute;
+				right: 5px;
+				bottom: 5px;
+				border-radius: 8px;
+				padding: 5px 10px;
+				background-color: #0000005e;
+				font-size: 0.8875em;
+			}
+
+			img {
+				display: block;
+				max-width: 100%;
 			}
 
 			footer {
@@ -56,6 +67,7 @@
 			{% for rol in collections.rollen %}
 				<figure>
 					<img src="{{ rol.path }}" alt=""/>
+					<figcaption>{{ rol.takenAt | date: '%Y-%m-%d' }}</figcaption>
 				</figure>
 			{% endfor %}
 			</ol>
