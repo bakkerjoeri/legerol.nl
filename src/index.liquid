@@ -87,7 +87,6 @@
 								sizes="(max-width: 600px) 100vw, 600px"
 								fetchpriority="high"
 								eleventy:widths="300,600"
-								eleventy:formats="jpg"
 							/>
 						{% else %}
 							<img
@@ -96,7 +95,6 @@
 								loading="lazy"
 								sizes="auto"
 								eleventy:widths="300,600"
-								eleventy:formats="jpg"
 							/>
 						{% endif %}
 						<figcaption>{{ rol.takenAt | date: '%Y-%m-%d' }}</figcaption>
