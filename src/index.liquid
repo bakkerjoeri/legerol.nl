@@ -77,27 +77,29 @@
 		<main>
 			<ol class="photogrid">
 			{% for rol in collections.rollen %}
-				<figure>
-					{% if forloop.index <= 3 %}
-						<img
-							src="{{ rol.path }}"
-							alt=""
-							sizes="(max-width: 600px) 100vw, 600px"
-							eleventy:widths="300,600"
-							eleventy:formats="jpg"
-						/>
-					{% else %}
-						<img
-							src="{{ rol.path }}"
-							alt=""
-							loading="lazy"
-							sizes="auto"
-							eleventy:widths="300,600"
-							eleventy:formats="jpg"
-						/>
-					{% endif %}
-					<figcaption>{{ rol.takenAt | date: '%Y-%m-%d' }}</figcaption>
-				</figure>
+				<li>
+					<figure>
+						{% if forloop.index <= 3 %}
+							<img
+								src="{{ rol.path }}"
+								alt=""
+								sizes="(max-width: 600px) 100vw, 600px"
+								eleventy:widths="300,600"
+								eleventy:formats="jpg"
+							/>
+						{% else %}
+							<img
+								src="{{ rol.path }}"
+								alt=""
+								loading="lazy"
+								sizes="auto"
+								eleventy:widths="300,600"
+								eleventy:formats="jpg"
+							/>
+						{% endif %}
+						<figcaption>{{ rol.takenAt | date: '%Y-%m-%d' }}</figcaption>
+					</figure>
+				</li>
 			{% endfor %}
 			</ol>
 		</main>
