@@ -73,7 +73,7 @@
 			<ol class="photogrid">
 			{% for rol in collections.rollen %}
 				<figure>
-					<img src="{{ rol.path }}" alt=""/>
+					<img loading="lazy" src="{{ rol.path }}" alt=""/>
 					<figcaption>{{ rol.takenAt | date: '%Y-%m-%d' }}</figcaption>
 				</figure>
 			{% endfor %}
