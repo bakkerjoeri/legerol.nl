@@ -55,6 +55,7 @@
 			img {
 				display: block;
 				max-width: 100%;
+				height: auto;
 			}
 
 			footer {
@@ -73,7 +74,7 @@
 			<ol class="photogrid">
 			{% for rol in collections.rollen %}
 				<figure>
-					<img loading="lazy" src="{{ rol.path }}" alt=""/>
+					<img loading="lazy" eleventy:widths="300,600" eleventy:formats="jpg" src="{{ rol.path }}" alt=""/>
 					<figcaption>{{ rol.takenAt | date: '%Y-%m-%d' }}</figcaption>
 				</figure>
 			{% endfor %}
