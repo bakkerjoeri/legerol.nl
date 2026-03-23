@@ -7,5 +7,5 @@ then
 fi
 
 
-exiftool src/**/*.JPEG -ext JPEG -d "%Y%m%d_%H%M%S%%-c.%%e" "-filename<CreateDate"
+exiftool src/**/*.JPEG -d "%Y%m%d_%H%M%S%%-c.%%e" "-filename<CreateDate"
 exiftool -all= -tagsFromFile @ -DateTimeOriginal -ColorSpaceTags -Orientation -overwrite_original src/**/*JPEG

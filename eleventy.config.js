@@ -8,9 +8,9 @@ import FastGlob from "fast-glob";
 export default function (eleventyConfig) {
   eleventyConfig.setInputDirectory("src");
   eleventyConfig.addPlugin(eleventyImageTransformPlugin);
-  eleventyConfig.addPassthroughCopy("src/rollen/*.JPEG");
+  eleventyConfig.addPassthroughCopy("src/rollen/*.{JPEG,jpeg,jpg}");
   eleventyConfig.addCollection("rollen", async () => {
-    const rollenImagePaths = await FastGlob("rollen/*.JPEG", {
+    const rollenImagePaths = await FastGlob("rollen/*.{JPEG,jpeg,jpg}", {
       cwd: "src",
     });
 
